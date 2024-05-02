@@ -1,10 +1,10 @@
 #!/bin/bash
-alias start="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> ~/ChallengeLog/challenge.log"
-alias stop="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> ~/ChallengeLog/challenge.log"
+alias start="gdate +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> ~/ChallengeLog/challenge.log"
+alias stop="gdate +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> ~/ChallengeLog/challenge.log"
 work_intervals() {
     cat challenge.log | \
     awk '{ print $2" "$3 }' | \
-    xargs -I {} date -d "{}" '+%s' | \
+    xargs -I {} gdate -d "{}" '+%s' | \
     awk '{ if (NR % 2 == 1) { odd = $0; } else { result = $0 - odd; print int(result/36)/100 " hours"; } }'
 }
 running_total() {
@@ -12,6 +12,6 @@ running_total() {
 }
 status_update() {
     running_total | awk '{ print "# Jen is currently at at "$1" hours!"}' > readme.md
-    git commit -am "Jen's $(date +%Y-%m-%d\ %H\:%M\:%S) status update"
+    git commit -am "Jen's $(gdate +%Y-%m-%d\ %H\:%M\:%S) status update"
     git push origin jen
 }
