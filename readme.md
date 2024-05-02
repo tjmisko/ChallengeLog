@@ -1,4 +1,1 @@
-# Jen is currently at at 4.35 hours!
-\r
-Jen started work at: 2024-05-01 03:53:43
-Jen stopped work at: 2024-05-01 08:14:43
+# Jen is currently at at hours hours!
