@@ -10,3 +10,6 @@ work_intervals() {
 running_total() {
     work_intervals | awk '{ sum+=$1 } END { print sum" hours" }'
 }
+status_update() {
+    running_total | awk '{ print "# Currently at "$1" hours!"}' > readme.md
+}
