@@ -1,6 +1,6 @@
 #!/bin/bash
-alias start="gdate +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> ~/ChallengeLog/challenge.log"
-alias stop="gdate +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> ~/ChallengeLog/challenge.log"
+alias start="gdate +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> ~/Desktop/ChallengeLog/challenge.log"
+alias stop="gdate +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> ~/Desktop/ChallengeLog/challenge.log"
 work_intervals() {
     cat challenge.log | \
     awk '{ print $2" "$3 }' | \
