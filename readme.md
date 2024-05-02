@@ -1,1 +1,1 @@
-# Currently at 0.0255556!
+# Currently at 0.0255556 hours!
