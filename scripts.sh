@@ -5,7 +5,7 @@ work_intervals() {
     cat challenge.log | \
     awk '{ print $2" "$3 }' | \
     xargs -I {} date -d "{}" '+%s' | \
-    awk '{ if (NR % 2 == 1) { odd = $0; } else { result = $0 - odd; print result/3600 " hours"; } }'
+    awk '{ if (NR % 2 == 1) { odd = $0; } else { result = $0 - odd; print int(result/36)/100 " hours"; } }'
 }
 running_total() {
     work_intervals | awk '{ sum+=$1 } END { print sum" hours" }'
