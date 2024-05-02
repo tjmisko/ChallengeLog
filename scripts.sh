@@ -12,7 +12,7 @@ running_total() {
 }
 status_update() {
     running_total | awk '{ print "# Tristan is currently at "$1" hours!"}' > readme.md
-    echo -e "\n" >> readme.md
+    echo -e "\r" >> readme.md
     cat challenge.log >> readme.md
     cat challenge.log
     git commit -am "Tristan's $(date +%Y-%m-%d\ %H\:%M\:%S) status update"
