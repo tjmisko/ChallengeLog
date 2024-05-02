@@ -16,7 +16,7 @@ running_total() {
 
 status_update() {
     running_total | awk '{ print "# Tristan is currently at "$1" hours!"}' > readme.md
-    cat challenge.log | sed -e 's/\n/\n\n/' >> readme.md
+    cat challenge.log | sed -e 's/stop/Tristan stopped work at/' | sed -e 's/start/Tristan started work at/' >> readme.md
     cat challenge.log
     git commit -am "Tristan's $(date +%Y-%m-%d\ %H\:%M\:%S) status update"
     git push origin tristan

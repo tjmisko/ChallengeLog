@@ -1,25 +1,25 @@
 # Tristan is currently at 2.8 hours!
-start: 2024-05-02 03:53:43
-stop: 2024-05-02 03:55:09
-start: 2024-05-02 04:21:44
-stop: 2024-05-02 04:21:50
-start: 2024-05-02 05:42:20
-stop: 2024-05-02 06:50:11
-start: 2024-05-02 06:56:17
-stop: 2024-05-02 07:11:42
-start: 2024-05-02 07:13:18
-stop: 2024-05-02 07:20:23
-start: 2024-05-02 07:27:25
-stop: 2024-05-02 07:45:49
-start: 2024-05-02 07:54:59
-stop: 2024-05-02 08:00:34
-start: 2024-05-02 08:01:56
-stop: 2024-05-02 08:04:09
-start: 2024-05-02 08:23:12
-stop: 2024-05-02 08:46:33
-start: 2024-05-02 09:11:34
-stop: 2024-05-02 09:33:45
-start: 2024-05-02 10:58:27
-stop: 2024-05-02 11:04:12
-start: 2024-05-02 11:06:06
-stop: 2024-05-02 11:08:39
+Tristan started work at: 2024-05-02 03:53:43
+Tristan stopped work at: 2024-05-02 03:55:09
+Tristan started work at: 2024-05-02 04:21:44
+Tristan stopped work at: 2024-05-02 04:21:50
+Tristan started work at: 2024-05-02 05:42:20
+Tristan stopped work at: 2024-05-02 06:50:11
+Tristan started work at: 2024-05-02 06:56:17
+Tristan stopped work at: 2024-05-02 07:11:42
+Tristan started work at: 2024-05-02 07:13:18
+Tristan stopped work at: 2024-05-02 07:20:23
+Tristan started work at: 2024-05-02 07:27:25
+Tristan stopped work at: 2024-05-02 07:45:49
+Tristan started work at: 2024-05-02 07:54:59
+Tristan stopped work at: 2024-05-02 08:00:34
+Tristan started work at: 2024-05-02 08:01:56
+Tristan stopped work at: 2024-05-02 08:04:09
+Tristan started work at: 2024-05-02 08:23:12
+Tristan stopped work at: 2024-05-02 08:46:33
+Tristan started work at: 2024-05-02 09:11:34
+Tristan stopped work at: 2024-05-02 09:33:45
+Tristan started work at: 2024-05-02 10:58:27
+Tristan stopped work at: 2024-05-02 11:04:12
+Tristan started work at: 2024-05-02 11:06:06
+Tristan stopped work at: 2024-05-02 11:08:39
