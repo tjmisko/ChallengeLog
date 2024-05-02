@@ -11,7 +11,10 @@ running_total() {
     work_intervals | awk '{ sum+=$1 } END { print sum" hours" }'
 }
 status_update() {
-    running_total | awk '{ print "# Tristan is currently at at "$1" hours!"}' > readme.md
+    running_total | awk '{ print "# Tristan is currently at "$1" hours!"}' > readme.md
+    echo -e "\n" >> readme.md
+    cat challenge.log >> readme.md
+    cat chellenge.log
     git commit -am "Tristan's $(date +%Y-%m-%d\ %H\:%M\:%S) status update"
     git push origin tristan
 }
