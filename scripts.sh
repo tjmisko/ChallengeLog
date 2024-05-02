@@ -12,6 +12,6 @@ running_total() {
 }
 status_update() {
     running_total | awk '{ print "# Currently at "$1" hours!"}' > readme.md
-    git commit -am "$\{date +%Y-%m-%d\ %H\:%M\:%S\} status update"
+    git commit -am "$(date +%Y-%m-%d\ %H\:%M\:%S) status update"
     git push
 }
