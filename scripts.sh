@@ -21,6 +21,7 @@ status_update() {
     cat challenge.log
     echo -e "\n"
     echo "Currently at: $(running_total)"
+    echo -e "\n"
     git commit -am "Tristan's $(date +%Y-%m-%d\ %H\:%M\:%S) status update"
     git push origin tristan
 }
