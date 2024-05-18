@@ -1,7 +1,7 @@
 #!/bin/bash
-alias start="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> ~/ChallengeLog/challenge.log"
-alias stop="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> ~/ChallengeLog/challenge.log"
-export CHALLENGE_DIR="~/ChallengeLog"
+alias start="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> C:/Users/TMisko/ChallengeLog/challenge.log"
+alias stop="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> C:/Users/TMisko/ChallengeLog/challenge.log"
+export CHALLENGE_DIR="C:/Users/TMisko/ChallengeLog"
 
 work_intervals() {
     cat $CHALLENGE_DIR/challenge.log | \
