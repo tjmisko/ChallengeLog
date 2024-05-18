@@ -3,7 +3,7 @@ alias start="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "start:" >> ~/ChallengeLog/
 alias stop="date +%Y-%m-%d\ %H\:%M\:%S | xargs echo "stop:" >> ~/ChallengeLog/challenge.log"
 
 work_intervals() {
-    local CHALLENGE_DIR = "~/ChallengeLog"
+    CHALLENGE_DIR = "~/ChallengeLog"
     cat $CHALLENGE_DIR/challenge.log | \
     awk '{ print $2" "$3 }' | \
     xargs -I {} date -d "{}" '+%s' | \
@@ -15,7 +15,7 @@ running_total() {
 }
 
 status_update() {
-    local CHALLENGE_DIR = "~/ChallengeLog"
+    CHALLENGE_DIR = "~/ChallengeLog"
     running_total | awk '{ print "# Tristan is currently at "$1" hours!"}' > $CHALLENGE_DIR/readme.md
     cat $CHALLENGE_DIR/challenge.log | sed -e 's/stop/Tristan stopped work at/' | sed -e 's/start/Tristan started work at/' | sed 's/T/* T/' >> readme.md
     echo -e "\n"
