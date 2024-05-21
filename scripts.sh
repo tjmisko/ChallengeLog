@@ -15,7 +15,7 @@ running_total() {
 }
 
 status_update() {
-    running_total | awk '{ print "# Tristan is currently at "$1" hours!"}' > $CHALLENGE_DIR/readme.md
+    running_total | awk '{ print "# Tristan is at "$1" hours this week!"}' > $CHALLENGE_DIR/readme.md
     cat $CHALLENGE_DIR/challenge.log | sed -e 's/stop/Tristan stopped work at/' | sed -e 's/start/Tristan started work at/' | sed 's/T/* T/' >> readme.md
     echo -e "\n"
     cat $CHALLENGE_DIR/challenge.log
