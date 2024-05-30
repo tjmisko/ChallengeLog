@@ -1,8 +1,9 @@
 #!/bin/bash
+
 export CLOG_DIR="C:/Users/TMisko/Tools/ChallengeLog"
 
 usage() {
-    echo unknown command: "$@"
+    echo unkown command: "$@"
     echo "Usage: clog [subcommand]"
     echo -e "\n"
     echo "Options:"
@@ -12,14 +13,14 @@ usage() {
     echo -e "\ttotal - sum the total intervals"
     echo -e "\tupdate - push a status update to github"
     echo -e "\tstatus - check the status of the timer and log"
-    echo -e "\trollover - archive the previous week's log and create the new log"
+    echo -e "\trollover - archive the previous week\'s log and create the new log"
     echo -e "\tedit - launch vim to edit the log directly"
 }
 
 start() {
     shift
     CLOG_START_DT=$(date +%F\ %H\:%M\:%S)
-    echo "start: $CLOG_START_DT"
+    echo start: $CLOG_START_DT"
     echo "start: $CLOG_START_DT" >> $CLOG_DIR/challenge.log
 }
 
