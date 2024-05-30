@@ -13,6 +13,7 @@ usage() {
     echo -e "\tupdate - push a status update to github"
     echo -e "\tstatus - check the status of the timer and log"
     echo -e "\trollover - archive the previous week's log and create the new log"
+    echo -e "\tedit - launch vim to edit the log directly"
 }
 
 start() {
@@ -40,6 +41,7 @@ intervals() {
 total() {
     shift
     CLOG_TOTAL=intervals | awk '{ sum+=$1 } END { print sum" hours" }'
+    echo $CLOG_TOTAL
 }
 
 update() {
@@ -73,6 +75,11 @@ rollover() {
     echo "- Check whether the log is stale (whether it needs to be rolled into the archive"
 }
 
+edit() {
+    vim $CLOG_DIR/challenge.log
+    # To do: allow it to accept a week number argument to edit in the archive
+}
+
 declare -A COMMANDS=(
     [main]=usage
     [start]=start
@@ -82,6 +89,7 @@ declare -A COMMANDS=(
     [update]=update
     [status]=status
     [rollover]=rollover
+    [edit]=edit
 )
 
 "${COMMANDS[${1:-main}]:-${COMMANDS[main]}}" "$@"
