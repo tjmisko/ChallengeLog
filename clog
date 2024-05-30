@@ -20,7 +20,7 @@ usage() {
 start() {
     shift
     CLOG_START_DT=$(date +%F\ %H\:%M\:%S)
-    echo start: $CLOG_START_DT"
+    echo start: $CLOG_START_DT
     echo "start: $CLOG_START_DT" >> $CLOG_DIR/challenge.log
 }
 
@@ -64,7 +64,7 @@ status() {
     echo "To be implemented"
     echo "- Determine current timer status by printing out the last line of the file"
     echo "- Check whether each start has a matching stop in the current log"
-    echo "- Check whether the log is stale (whether it needs to be rolled into the archive)"
+    echo "- Check whether the log is stale and whether it needs to be rolled into the archive whether"
 }
 
 rollover() {
