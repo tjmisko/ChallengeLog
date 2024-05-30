@@ -40,7 +40,7 @@ intervals() {
 
 total() {
     shift
-    CLOG_TOTAL=intervals | awk '{ sum+=$1 } END { print sum" hours" }'
+    CLOG_TOTAL=$(intervals | awk '{ sum+=$1 } END { print sum" hours" }')
     echo $CLOG_TOTAL
 }
 
@@ -93,3 +93,4 @@ declare -A COMMANDS=(
 )
 
 "${COMMANDS[${1:-main}]:-${COMMANDS[main]}}" "$@"
+# Thanks https://blogsh.github.io/2020/03/21/subcommands-in-bash-scripts.html for a well explained post on how to setup nice subcommands
