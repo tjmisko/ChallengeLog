@@ -1,5 +1,4 @@
 #!/bin/bash
-
 export CLOG_DIR="C:/Users/TMisko/Tools/ChallengeLog"
 
 usage() {
@@ -17,14 +16,14 @@ usage() {
     echo -e "\tedit - launch vim to edit the log directly"
 }
 
-start() {
+clog_start() {
     shift
     CLOG_START_DT=$(date +%F\ %H\:%M\:%S)
     echo start: $CLOG_START_DT
     echo "start: $CLOG_START_DT" >> $CLOG_DIR/challenge.log
 }
 
-stop() {
+clog_stop() {
     shift
     CLOG_STOP_DT=$(date +%F\ %H\:%M\:%S)
     echo "stop: $CLOG_STOP_DT"
@@ -83,8 +82,8 @@ edit() {
 
 declare -A COMMANDS=(
     [main]=usage
-    [start]=start
-    [stop]=stop
+    [start]=clog_start
+    [stop]=clog_stop
     [intervals]=intervals
     [total]=total
     [update]=update
