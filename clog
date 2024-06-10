@@ -14,6 +14,7 @@ usage() {
     echo -e "\tstatus - check the status of the timer and log"
     echo -e "\trollover - archive the previous week\'s log and create the new log"
     echo -e "\tedit - launch vim to edit the log directly"
+    echo -e "\ttail - print the tail of the log"
 }
 
 clog_start() {
@@ -76,8 +77,11 @@ rollover() {
 }
 
 edit() {
-    vim $CLOG_DIR/challenge.log
-    # To do: allow it to accept a week number argument to edit in the archive
+    nvim +"normal Gzz" $CLOG_DIR/challenge.log
+}
+
+clog_tail() {
+    tail $CLOG_DIR/challenge.log
 }
 
 declare -A COMMANDS=(
@@ -90,6 +94,7 @@ declare -A COMMANDS=(
     [status]=status
     [rollover]=rollover
     [edit]=edit
+    [tail]=clog_tail
 )
 
 "${COMMANDS[${1:-main}]:-${COMMANDS[main]}}" "$@"
