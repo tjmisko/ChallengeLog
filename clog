@@ -1,4 +1,4 @@
-#!/bin/bash
+#.config\scripts\retend.sh!/bin/bash
 export CLOG_DIR="C:/Users/TMisko/Tools/ChallengeLog"
 
 usage() {
@@ -31,7 +31,7 @@ clog_stop() {
     echo "stop: $CLOG_STOP_DT" >> $CLOG_DIR/challenge.log
 }
 
-intervals() {
+clog_intervals() {
     shift
     cat $CLOG_DIR/challenge.log | \
     awk '{ print $2" "$3 }' | \
@@ -39,14 +39,14 @@ intervals() {
     awk '{ if (NR % 2 == 1) { odd = $0; } else { result = $0 - odd; print int(result/36)/100 " hours"; } }'
 }
 
-total() {
+clog_total() {
     shift
-    CLOG_TOTAL=$(intervals | awk '{ sum+=$1 } END { print sum" hours" }')
+    CLOG_TOTAL=$(clog_intervals | awk '{ sum+=$1 } END { print sum" hours" }')
     echo $CLOG_TOTAL
 }
 
-update() {
-    total 
+clog_update() {
+    clog_total 
     echo Tristan is at $CLOG_TOTAL hours this week\! > $CLOG_DIR/readme.md
     cat $CLOG_DIR/challenge.log | sed -e 's/stop/Tristan stopped work at/' | sed -e 's/start/Tristan started work at/' | sed 's/T/* T/' >> $CLOG_DIR/readme.md
     echo -e "\n"
@@ -58,7 +58,7 @@ update() {
     git -C $CLOG_DIR push origin tristan
 }
 
-status() {
+clog_status() {
     echo "No op for now"
     echo -e "\n"
     echo "To be implemented"
@@ -67,7 +67,7 @@ status() {
     echo "- Check whether the log is stale and whether it needs to be rolled into the archive whether"
 }
 
-rollover() {
+clog_rollover() {
     echo "No op for now"
     echo -e "\n"
     echo "To be implemented"
@@ -76,7 +76,7 @@ rollover() {
     echo "- Check whether the log is stale (whether it needs to be rolled into the archive"
 }
 
-edit() {
+clog_edit() {
     nvim +"normal Gzz" $CLOG_DIR/challenge.log
 }
 
@@ -84,18 +84,18 @@ clog_tail() {
     tail $CLOG_DIR/challenge.log
 }
 
-declare -A COMMANDS=(
+declare -A CLOG_COMMANDS=(
     [main]=usage
     [start]=clog_start
     [stop]=clog_stop
-    [intervals]=intervals
-    [total]=total
-    [update]=update
-    [status]=status
-    [rollover]=rollover
-    [edit]=edit
+    [intervals]=clog_intervals
+    [total]=clog_total
+    [update]=clog_update
+    [status]=clog_status
+    [rollover]=clog_rollover
+    [edit]=clog_edit
     [tail]=clog_tail
 )
 
-"${COMMANDS[${1:-main}]:-${COMMANDS[main]}}" "$@"
+"${CLOG_COMMANDS[${1:-main}]:-${CLOG_COMMANDS[main]}}" "$@"
 # Thanks https://blogsh.github.io/2020/03/21/subcommands-in-bash-scripts.html for a well explained post on how to setup nice subcommands
