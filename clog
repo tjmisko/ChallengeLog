@@ -1,5 +1,6 @@
-#.config\scripts\retend.sh!/bin/bash
-export CLOG_DIR="C:/Users/TMisko/Tools/ChallengeLog"
+#!/bin/bash
+
+export CLOG_DIR="~/Tools/ChallengeLog"
 
 usage() {
     echo unkown command: "$@"
